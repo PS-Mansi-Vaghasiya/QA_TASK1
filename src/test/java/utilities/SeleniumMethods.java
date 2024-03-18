@@ -2,14 +2,15 @@ package utilities;
 
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.bouncycastle.oer.its.ieee1609dot2.basetypes.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -77,16 +78,22 @@ public class SeleniumMethods {
 	}
 
 	
+
     // Wait for element to be visible
-    public WebElement waitForElementVisible(By locator, int timeoutInSeconds) {
-    	 wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
+//    public WebElement waitForElementVisible(By locator, int timeoutInSeconds) {
+//    	 wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+//        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+//    }
 
     // Wait for element to be clickable
-    public WebElement waitForElementClickable(By locator, int timeoutInSeconds) {
-    	wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
-    }
+//    public WebElement waitForElementClickable(By locator, int timeoutInSeconds) {
+//    	wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+//        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+//    }
 
+    public void openNewTab(String url) {
+    	driver.switchTo().newWindow(WindowType.TAB);
+    	navigateURL(url);
+    }
+    
 }

@@ -13,8 +13,8 @@ public class CucumberHooks {
     	BaseClass.startDriver();
     }
 
-    @After
-    public void afterScenario() {
-        BaseClass.stopDriver();
-    }
+	
+	  @After 
+	  public void afterScenario() { BaseClass.stopDriver(); }
+	 
 }

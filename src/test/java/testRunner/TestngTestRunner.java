@@ -2,9 +2,9 @@ package testRunner;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
+
 @CucumberOptions(
-    features = ".//features/HomePage.feature",
-    //tags = "@Smoke22",
+    features = ".//features",
     glue = {"stepDefinitions", "hooks"},
     monochrome = true,
     plugin = {
@@ -16,4 +16,5 @@ import io.cucumber.testng.CucumberOptions;
     }
 )
 public class TestngTestRunner extends AbstractTestNGCucumberTests {
+	
 }
